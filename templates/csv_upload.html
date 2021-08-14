@@ -1,0 +1,30 @@
+<!DOCTYPE=html>
+{% extends "base.html" %}
+{% block content %}
+<!-- Table from database -->
+<table style="width: 100%; table-layout: floating;
+	      border-radius: 5px; background: white;">
+  <thead>
+    <tr>
+      <th  scope="col">Code</th>
+      <th  scope="col">Name</th>
+      <th  scope="col">Price</th>
+      <th  scope="col">PriceSP</th>
+      <th  scope="col">Quantity</th>
+      <th  scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entry in data_entries %}
+      <tr>
+      <td>{{ entry.code }}</td>
+      <td>{{ entry.name }}</td>
+      <td>{{ entry.price }}</td>
+      <td>{{ entry.priceSP }}</td>
+      <td>{{ entry.quantity }}</td>
+      <td>{{ entry.description }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
