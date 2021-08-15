@@ -6,4 +6,4 @@ Django test task.
 
 - [x] Model with fields fitting given CSV
 - [x] View which parses given CSV
-- [] Page with upload form & table
+- [x] Page with upload form & table

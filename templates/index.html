@@ -24,10 +24,10 @@
       <tr>
       <td>{{ entry.code }}</td>
       <td>{{ entry.name }}</td>
-      <td>{{ entry.price }}</td>
-      <td>{{ entry.priceSP }}</td>
-      <td>{{ entry.quantity }}</td>
-      <td>{{ entry.description }}</td>
+      <td>{{ entry.price }}&#8381</td>
+      <td>{{ entry.priceSP }}&#8381</td>
+      <td>{{ entry.quantity }} {{entry.measurment_unit}}.</td>
+      <td>{{ entry.description|safe }}</td>
       </tr>
     {% endfor %}
   </tbody>

@@ -23,8 +23,10 @@ form {
 input {
 	background:white;
 	border: 1px solid;
-	border-color: #fff;
-	border-radius: 2px;
+	border-color: #aaa;
+	border-radius: 3px;
+	padding: 1px;
+	font-family: monospace;
 }
 
 /*
