@@ -6,14 +6,9 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon"
       href="https://akticom.ru/assets/tpl/img/favicon.ico" type="image/x-icon">
-    <!--{% load static %}-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
     <title>CSV parser in Django</title>
-    <style>
-      html {padding-bottom: 400px;}
-      h1 {text-align: center;}
-      main {background: #def; border-radius: 10px; padding: 1em;
-      	margin-bottom: 400px; margin: auto;font-family: sans-serif;}
-    </style>
   </head>
   <body>
     <header>

@@ -1,18 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="csv_upload" method="POST" enctype="multipart/form-data"
-	style="text-align: center;">
+<form action="csv_upload" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <label for="file1"> Upload your CSV file: </label>
-    <input type="file" id="file1" name="csv"
-      style="border: 1px solid;border-color: #fff;border-radius: 2px;
-      background:white;">
+    <input type="file" id="file1" name="csv">
     <button type="submit">Upload</button>
 </form>
 
 <!-- Table from database -->
-<table style="width: 100%; table-layout: floating;
-	      border-radius: 5px; background: white;">
+<table>
   <thead>
     <tr>
       <th  scope="col">Code</th>
