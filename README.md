@@ -2,6 +2,11 @@
 
 Django test task.
 
+### Requirements
+
+- python3.9.6
+- Django 3.2
+
 ### TODO
 
 - [x] Model with fields fitting given CSV
