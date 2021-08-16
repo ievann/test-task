@@ -21,7 +21,12 @@ def csv_upload(request):
         return render(request, template, prompt)
 
     if request.method == "POST":
-        return csv_handler(request, template, data_entries)
+        csv_file = request.FILES.get('csv', None).read().decode('UTF-8')
+        csv_handler(csv_file)
+        context = {'data_entries': data_entries}
+        response = render(request, template, context)
+        return response
+        #return csv_handler(request, template, data_entries)
 
 # This piece of code has been moved to another file, csv_cleanup.py
 #        csv_file=request.FILES.get('csv', None).read().decode('UTF-8')

@@ -2,15 +2,19 @@ from django.shortcuts import render
 from .models import Data
 import csv, io
 
-def csv_handler(request, template, data_entries):
-    csv_file=request.FILES.get('csv', None).read().decode('UTF-8')
+def csv_handler(csv_file):
     io_string = io.StringIO(csv_file)
     next(io_string)
     for row in csv.reader(io_string, delimiter=';', quotechar='|'):
 
         # Some entries have ';' in their description, omitting this
         while len(row) > 14:
-            row.pop()
+            popped = row.pop()
+            row[-1] += '; ' + popped
+
+        # row[13] = row[13] + (';'.join(row[14:]) if len(row)>14 else '')
+        # row = row[:14]
+
 
         # Bulk variable declaration from row (14 pieces)
         code, name, level1, level2, level3, price, priceSP, quantity, \
@@ -51,7 +55,7 @@ def csv_handler(request, template, data_entries):
                 measurment_unit=measurment_unit, picture=picture,
                 show_on_mainpage=show_on_mainpage, description=description)
 
-    context = {'data_entries': data_entries}
-    response = render(request, template, context)
-
-    return response
+#    context = {'data_entries': data_entries}
+#    response = render(request, template, context)
+#
+#    return response
